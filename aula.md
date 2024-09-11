@@ -36,6 +36,7 @@ let - é uma palavra que define uma variável que aceita alteração de valor
 
 - [x] Operador de atribuição de valor =
 - [x] Operador de concatenação +
+- [x] Operadores de comparação: == (igual) != (diferente) < (menor) > (maior)
 
 ## Estrutura de dados
 
@@ -86,6 +87,7 @@ const criarMeta = () => {
 # Condicionais
 
 - [x] switch
+- [x] if/else
 
 # Importação de módulos em Node.js
 
@@ -105,4 +107,6 @@ added 44 packages in 4s
 
 const { select } = require('@inquirer/prompts') 
 
+# Programação assíncrona e Promises
 
+- [x] Uso de funções assíncronas (async/await)
