@@ -28,10 +28,36 @@ let - é uma palavra que define uma variável que aceita alteração de valor
 
 ## Tipos de dados:
 
-Strings (textos): "" '' ``
-Number: 2 1.4
-Function
+- [x] Strings (textos): "" '' ``
+- [x] Number: 2 1.4
+- [x] Bollean: verdadeiro ou falso
 
 ## Operadores
 
-= Operador de atribuição de valor
+- [x] Operador de atribuição de valor =
+- [x] Operador de concatenação +
+
+## Estrutura de dados
+
+### Arrays:
+
+- [x] Uma lista que contém qualquer tipo de dado
+
+### Objetos:
+
+- [x] Atributos e métodos
+- [x] Criação e manipulação de objetos
+- [x] Acesso a propriedades de objetos
+
+### Functions
+
+- [x] criar, passar argumentos
+- [x] executar
+- [x] arrow fuction // const criarMeta = () => {}
+- [x] named function // function criarMeta() {}
+
+
+# Função com arrow function
+
+const criarMeta = () => {}
+
