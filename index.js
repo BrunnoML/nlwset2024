@@ -1,8 +1,9 @@
-const { select, input, checkbox } = require('@inquirer/prompts') 
+const { select, input, checkbox } = require('@inquirer/prompts'); 
+const { type } = require('os');
 
 let meta = {
   value: 'Tomar 3L de água por dia',
-  checked: false
+  checked: false,
 }
 
 let metas = [ meta]
@@ -47,6 +48,29 @@ const listarMetas = async () => {
     console.log("Meta(s) marcadas como concluída(s)");
 }
 
+const metasRealizadas = async () => {
+  const realizadas = metas.filter((meta) => {
+    return meta.checked
+})
+
+  if(realizadas.length == 0){
+    console.log("Você não realizou nenhuma meta ainda! :(");
+    return;
+  }
+
+  await select({
+    message: 'Metas realizadas:',
+    choices: [...realizadas],
+})
+}
+
+const desmarcarTodasMetas = async () => {
+  metas.forEach((m) => {
+    m.checked = false;
+  })
+
+  console.log("Todas as metas foram desmarcadas");
+}
 // Função principal
 // Tem que ter o async para poder usar o await e esperar a escolha do usuário
 const start = async () => {
@@ -57,10 +81,12 @@ const start = async () => {
     // Mostra as opções para o usuário, usando await para esperar a escolha
     // Temos que usar as palavras message e choices, pois são padrões do inquirer
     const opcao = await select({
-      message: 'O que deseja fazer?',
+      message: 'Menu >',
       choices: [
         { name: 'Cadastrar meta', value: 'cadastrar' },
         { name: 'Listar metas', value: 'listar' },
+        { name: 'Metas realizadas', value: 'realizadas' },
+        { name: 'Desmarcar todas as metas', value: 'desmarcar' },
         { name: 'Sair', value: 'sair' }
       ]
     });
@@ -72,7 +98,12 @@ const start = async () => {
         break;
       case "listar":
         await listarMetas();
-        console.log("Listando...");
+        break;
+      case "realizadas":
+        await metasRealizadas();
+        break;
+      case "desmarcar":
+        await desmarcarTodasMetas();
         break;
       case "sair":
         console.log("Até a próxima!")

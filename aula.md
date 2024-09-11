@@ -37,12 +37,15 @@ let - é uma palavra que define uma variável que aceita alteração de valor
 - [x] Operador de atribuição de valor =
 - [x] Operador de concatenação +
 - [x] Operadores de comparação: == (igual) != (diferente) < (menor) > (maior)
+- [x] Spread operator: ...
 
 ## Estrutura de dados
 
 ### Arrays:
 
 - [x] Uma lista que contém qualquer tipo de dado
+- [x] Método de array: Método é toda função que está dentro de um objet
+      push, [find, forEach, filter] : HOF (Higher Order Functions)
 
 ### Objetos:
 
