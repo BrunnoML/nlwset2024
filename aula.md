@@ -19,3 +19,19 @@ Como um lego, você irá utilizar peças para criar algoritmos, ou seja, para re
 Coletar os dados
 Processar os dados (manipular, alterar...)
 Apresentar os dados
+
+## Variáveis
+
+Globais e locais
+const - é uma palavra reservada para definir uma variável que não aceita alterar seu valor
+let - é uma palavra que define uma variável que aceita alteração de valor
+
+## Tipos de dados:
+
+Strings (textos): "" '' ``
+Number: 2 1.4
+Function
+
+## Operadores
+
+= Operador de atribuição de valor
