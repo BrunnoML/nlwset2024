@@ -26,15 +26,19 @@ const listarMetas = async () => {
     choices: [...metas],
     instructions: false,
   });
+// Essa parte do código estava após o if, ocasionando um erro, pois não desmarcava todas as metas, sempre exigia que pelo menos uma meta ficasse selecionada
+// Ao colocar aqui em cima, ele desmarca todas as metas, e só marca as que o usuário escol
+// A função forEach percorre o array de metas e define a propriedade checked de cada uma como false. Isso garante que todas as metas estejam desmarcadas.
+  metas.forEach((m) => {
+    m.checked = false;
+  })
 
   if(respostas.length == 0){
     console.log("Você não selecionou nenhuma meta!");
     return;
   }
 
-  metas.forEach((m) => {
-    m.checked = false;
-  })
+  
 
   respostas.forEach((resposta) => {
     const meta = metas.find((m) => {
