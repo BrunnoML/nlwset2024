@@ -95,6 +95,7 @@ const criarMeta = () => {
 # Importação de módulos em Node.js
 
 - [x] Importação de módulos (require, CommonJS)
+- [x] FS (file system)
 - [x] Biblioteca 'inquirer' para criar prompts interativos
 
 Vamos instalar o inquirer
@@ -113,3 +114,9 @@ const { select } = require('@inquirer/prompts')
 # Programação assíncrona e Promises
 
 - [x] Uso de funções assíncronas (async/await)
+
+## JSON
+
+- [x] Javascript Object Notation
+- [x] JSON.parse() - transformar de json para javascript
+- [x] JSON.stringfy() - transformar de javascript para json
