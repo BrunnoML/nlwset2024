@@ -86,3 +86,23 @@ const criarMeta = () => {
 # Condicionais
 
 - [x] switch
+
+# Importação de módulos em Node.js
+
+- [x] Importação de módulos (require, CommonJS)
+- [x] Biblioteca 'inquirer' para criar prompts interativos
+
+Vamos instalar o inquirer
+
+npm install inquirer
+
+added 44 packages in 4s
+
+6 packages are looking for funding
+  run `npm fund` for details
+
+## Vamos importar assim:
+
+const { select } = require('@inquirer/prompts') 
+
+
