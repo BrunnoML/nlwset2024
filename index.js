@@ -63,17 +63,25 @@ const metasRealizadas = async () => {
   }
 
   await select({
-    message: 'Metas realizadas:',
+    message: 'Metas realizadas: ' + realizadas.length,
     choices: [...realizadas],
 })
 }
 
-const desmarcarTodasMetas = async () => {
-  metas.forEach((m) => {
-    m.checked = false;
+const metasAbertas = async () => {
+  const abertas = metas.filter((meta) => {
+    return meta.checked != true
   })
 
-  console.log("Todas as metas foram desmarcadas");
+  if (abertas.length == 0) {
+    console.log("Não existem metas abertas :)")
+    return
+  }
+
+  await select({
+    message: "Metas Abertas " + abertas.length,
+    choices: [...abertas],
+})
 }
 // Função principal
 // Tem que ter o async para poder usar o await e esperar a escolha do usuário
@@ -90,7 +98,7 @@ const start = async () => {
         { name: 'Cadastrar meta', value: 'cadastrar' },
         { name: 'Listar metas', value: 'listar' },
         { name: 'Metas realizadas', value: 'realizadas' },
-        { name: 'Desmarcar todas as metas', value: 'desmarcar' },
+        { name: 'Metas abertas', value: 'abertas' },
         { name: 'Sair', value: 'sair' }
       ]
     });
@@ -106,8 +114,8 @@ const start = async () => {
       case "realizadas":
         await metasRealizadas();
         break;
-      case "desmarcar":
-        await desmarcarTodasMetas();
+      case "abertas":
+        await metasAbertas();
         break;
       case "sair":
         console.log("Até a próxima!")
