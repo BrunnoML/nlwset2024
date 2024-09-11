@@ -85,3 +85,4 @@ const criarMeta = () => {
 
 # Condicionais
 
+- [x] switch
